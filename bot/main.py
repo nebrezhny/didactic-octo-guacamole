@@ -80,7 +80,7 @@ def main():
         app = web.Application()
         SimpleRequestHandler(dispatcher=dp, bot=bot).register(app, path="/webhook")
         setup_application(app, dp, bot=bot)
-        web.run_app(app, host="0.0.0.0", port=8080)
+        web.run_app(app, host="0.0.0.0", port=8080)  # nosec B104
     else:
         logger.info("Starting long polling...")
         asyncio.run(dp.start_polling(bot))

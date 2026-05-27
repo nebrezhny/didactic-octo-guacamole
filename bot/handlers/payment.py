@@ -50,7 +50,7 @@ async def process_buy(callback: CallbackQuery):
         payload=payload,
         currency="XTR",
         prices=prices,
-        provider_token="" 
+        provider_token=""  # nosec B106
     )
     await callback.answer()
 
